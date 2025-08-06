@@ -13,5 +13,3 @@ The name of the file(s): cyberpunk2077_game_intro_message_x
 Import Videos ✔️
 
 Import Images ❌
-
-Import Audio ❌
