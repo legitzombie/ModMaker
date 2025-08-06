@@ -1,3 +1,3 @@
 # Scripts that automate mod making
 
-<img width="788" height="325" alt="image" src="https://github.com/user-attachments/assets/c7d7a773-6267-4a38-9dbc-9ef39a9578bf" />
+![ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/51785dce-ccdb-4f90-9f27-2c563d31941c)
