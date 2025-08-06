@@ -4,6 +4,6 @@
 
 # What you need for this to work
 
-The path of the folder you want to modify \archive\base\movies\fullscreen\common\  <- Don't forget the final slash
+The path of the folder you want to modify: \archive\base\movies\fullscreen\common\  <- Don't forget the final slash
 
-The name of the file(s) cyberpunk2077_game_intro_message_x
+The name of the file(s): cyberpunk2077_game_intro_message_x
