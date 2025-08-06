@@ -48,14 +48,13 @@ if not exist "%MOD_DIR%" mkdir "%MOD_DIR%"
 if not exist "%VIDEO_DIR%" mkdir "%VIDEO_DIR%"
 if not exist "%UTILS_DIR%" mkdir "%UTILS_DIR%"
 
+echo [INFO] Downloading mod template...
 curl -s -L -o "%UTILS_DIR%\GETHELPERS.bat" "%UTILS_BASE_URL%/GETHELPERS.bat"
 
 for %%F in (%UTILS_FILES%) do (
-    echo Downloading %%F...
     curl -s -L -o "%UTILS_DIR%\%%F" "%UNIQUE_BASE_URL%/%%F"
 )
 
-echo Downloading Run.bat and Reset.bat
 curl -s -L -o "%MOD_DIR%\Run.bat" "%VIDEO_BASE_URL%/Run.bat"
 curl -s -L -o "%MOD_DIR%\Reset.bat" "%UNIQUE_BASE_URL%/Reset.bat"
 
