@@ -49,11 +49,12 @@ set /p choice="Select an option (1 or 2): "
 
 if "%choice%"=="1" (
     call VideoReplacer.bat
-	python ModifyScripts.py
+	python ModifyScripts.py %choice%
 ) else if "%choice%"=="2" (
     call ImageReplacer.bat
+	python ModifyScripts.py %choice%
 ) else (
-    echo Invalid choice. Please try again.
+    cls
     goto menu
 )
 
