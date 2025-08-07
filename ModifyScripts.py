@@ -66,6 +66,7 @@ def process_bat_file(file_path):
 
     new_lines = []
     changethename_replaced = False
+    changethepart_replaced = False
 
     for line in lines:
         original_line = line 
@@ -85,14 +86,25 @@ def process_bat_file(file_path):
             for asset_name in replacement_names[1:]:
                 new_copy_line = f'    copy "%%f" "%dest_path%{asset_name}!ext!" >nul\n'
                 new_lines.append(new_copy_line)
+                
+        if "PARTNAME" in line and not changethepart_replaced:
+            line = line.replace("PARTNAME", replacement_names[0].lower())
+            changethepart_replaced = True
+
+            new_lines.append(line) 
+
+            for asset_name in replacement_names[1:]:
+                new_copy_line = f'    copy "%%f" "%dest_path%\\{asset_name}!ext!" >nul\n'
+                new_lines.append(new_copy_line)
         else:
             new_lines.append(line)
 
     content = "".join(new_lines)
     content = content.replace("\\archive\\base\\", replace_base_path)
+    replace_raw_path = replace_base_path.replace("archive", "raw")
+    content = content.replace("\\raw\\base\\", replace_raw_path)
     content = content.replace("Custom.archive", mod_name + ".archive")
-    content = content.replace("custom.", mod_name.lower() + ".")
-    content = content.replace("custom", mod_name.lower())
+    content = content.replace("custom", atlas_name.lower())
     
 
     with open(file_path, 'w', encoding='utf-8') as file:
